@@ -1,4 +1,4 @@
-import { fakeAsync, flushMicrotasks, tick } from "@angular/core/testing";
+import { fakeAsync, flush, flushMicrotasks, tick } from "@angular/core/testing";
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators'
 
@@ -80,6 +80,7 @@ describe('Async Testing Examples', () => {
       });
 
     tick(1000);
+    // flush();
 
     expect(test).toBeTrue();
   }));
